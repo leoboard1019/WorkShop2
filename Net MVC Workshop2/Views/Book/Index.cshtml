@@ -53,38 +53,38 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BOOK_NAME, new { @class = "form-control", id = "BookName", name = "BookName", required = "為必填" })
+                @Html.TextBoxFor(model => model.BOOK_NAME, new { @class = "form-control", id = "BookName", name = "BookName", required = "必填" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_AUTHOR, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BOOK_AUTHOR, new { @class = "form-control", id = "BookAuthor", name = "BookAuthor", required = "為必填" })
+                @Html.TextBoxFor(model => model.BOOK_AUTHOR, new { @class = "form-control", id = "BookAuthor", name = "BookAuthor", required = "必填" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_PUBLISHER, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BOOK_PUBLISHER, new { @class = "form-control", id = "BookPublisher", name = "BookPublisher", required = "為必填" })
+                @Html.TextBoxFor(model => model.BOOK_PUBLISHER, new { @class = "form-control", id = "BookPublisher", name = "BookPublisher", required = "必填" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_NOTE, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextArea("BOOK_NOTE", new { @class = "form-control", id = "BookNote", name = "BookNote", required = "為必填" })
+                @Html.TextArea("BOOK_NOTE", new { @class = "form-control", id = "BookNote", name = "BookNote", required = "必填" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_BOUGHT_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BOOK_BOUGHT_DATE, new { @class = "form-control", id = "BookBoughtDate", style = "width: 50%;", name = "BookBoughtDate", required = "為必填" })
+                @Html.TextBoxFor(model => model.BOOK_BOUGHT_DATE, new { @class = "form-control", id = "BookBoughtDate", style = "width: 50%;", name = "BookBoughtDate", required = "必填" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.BOOK_CLASS_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.BOOK_CLASS_ID, new { @class = "form-control", id = "BookClassInsert", style = "width: 50%;", name = "BookClassInsert", required = "為必填" })
+                @Html.TextBoxFor(model => model.BOOK_CLASS_ID, new { @class = "form-control", id = "BookClassInsert", style = "width: 50%;", name = "BookClassInsert", required = "必填" })
             </div>
         </div>
 
@@ -92,7 +92,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.BOOK_STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.BOOK_STATUS, new { @class = "form-control", style = "width: 50%;", id = "BookStatusUpdate", name = "BookStatusUpdate", required = "為必填" })
+                    @Html.TextBoxFor(model => model.BOOK_STATUS, new { @class = "form-control", style = "width: 50%;", id = "BookStatusUpdate", name = "BookStatusUpdate", required = "必填" })
                 </div>
             </div>
 
@@ -142,7 +142,7 @@
                     optionLabel: "請選擇..."
                 })
             }, error: function (error) {
-                alert("系統發生錯誤");
+                alert("SystemError");
             }
         });
         //借閱人下拉式
@@ -160,7 +160,7 @@
                     optionLabel: "請選擇..."
                 })
             }, error: function (error) {
-                alert("系統發生錯誤");
+                alert("SystemError");
             }
         });
         //借閱狀態下拉式
@@ -178,7 +178,7 @@
                     optionLabel: "請選擇..."
                 })
             }, error: function (error) {
-                alert("系統發生錯誤");
+                alert("SystemError");
             }
         });
         $("#BookBoughtDate").kendoDatePicker({
@@ -204,7 +204,7 @@
                         pageSize: 5
                     },
                     columns: [
-                        { field: "BOOK_CLASS_ID", title: "圖書類別" },
+                        { field: "BOOK_CLASS_ID", title: "書籍類別" },
                         { field: "BOOK_NAME", title: "書名" },
                         { field: "BOOK_BOUGHT_DATE", title: "購書日期" },
                         { field: "BOOK_STATUS", title: "借閱狀態" },
@@ -225,7 +225,7 @@
                     ]
                 });
             }, error: function (error) {
-                alert("系統發生錯誤");
+                alert("SystemError");
             }
         });
     }
@@ -253,7 +253,7 @@
                     var grid = $('#Grid').data("kendoGrid");
                     grid.setDataSource(response);
                 }, error: function (error) {
-                    alert("系統發生錯誤");
+                    alert("SystemError");
                 }
             });
             return false;
@@ -296,7 +296,7 @@
                                 var grid = $('#Grid').data("kendoGrid");
                                 grid.setDataSource(response);
                             }, error: function (error) {
-                                alert("系統發生錯誤");
+                                alert("SystemError");
                             }
                         });
                         return false;
@@ -383,12 +383,12 @@
                     }
                     else {
                         $("#BookKeeperUpdate").data("kendoDropDownList").readonly(false);
-                        //$("#BookKeeperUpdate").attr('required', '為必填');
+                        //$("#BookKeeperUpdate").attr('required', '必填');
                     }
 
                 });
             }, error: function (error) {
-                alert("系統發生錯誤");
+                alert("SystemError");
 
             }
         });
@@ -421,12 +421,12 @@
                             var grid = $('#Grid').data("kendoGrid");
                             grid.setDataSource(response);
                         }, error: function (error) {
-                            alert("系統發生錯誤");
+                            alert("SystemError");
                         }
                     });
                     return false;
                 }, error: function (error) {
-                    alert("系統發生錯誤");
+                    alert("SystemError");
 
                 }
             });
@@ -438,3 +438,4 @@
     }
 
 </script>
+//LeoBoard
